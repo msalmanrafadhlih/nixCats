@@ -95,3 +95,6 @@ map('v', '>', '>gv', { desc = 'Indent right' })
 -- Macros
 map('n', 'Q', '@qj', { desc = 'Run q macro' })
 map('x', 'Q', ':norm @q<CR>', { desc = 'Run q macro' })
+
+-- insert mode
+map('i', 'fj', 'Esc', { desc = 'Exit insert mode' })

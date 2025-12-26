@@ -41,7 +41,7 @@ in
         nixd
         astro-language-server
         bash-language-server
-        dockerfile-language-server-nodejs
+        dockerfile-language-server
         vscode-langservers-extracted
         harper
         ltex-ls-plus
