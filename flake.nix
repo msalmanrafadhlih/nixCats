@@ -62,7 +62,6 @@
     self,
     nixpkgs,
     nixCats,
-    stdenv,
     ...
   } @ inputs: let
     inherit (nixCats) utils;
@@ -92,7 +91,7 @@
       packages = utils.mkAllWithDefault defaultPackage;
 
       checks = {
-        pre-commit-check = inputs.pre-commit-hooks.lib.${stdenv.hostPlatform.system}.run {
+        pre-commit-check = inputs.pre-commit-hooks.lib.${system}.run {
           src = ./.;
           hooks = {
             ruff.enable = true;
@@ -111,8 +110,8 @@
             # defaultPackage
             just
           ];
-          inherit (self.checks.${stdenv.hostPlatform.system}.pre-commit-check) shellHook;
-          buildInputs = self.checks.${stdenv.hostPlatform.system}.pre-commit-check.enabledPackages;
+          inherit (self.checks.${system}.pre-commit-check) shellHook;
+          buildInputs = self.checks.${system}.pre-commit-check.enabledPackages;
         };
       };
     })
@@ -144,7 +143,7 @@
           ;
       };
     in {
-      # these outputs will be NOT wrapped with ${stdenv.hostPlatform.system}
+      # these outputs will be NOT wrapped with ${system}
       overlays =
         utils.makeOverlays luaPath {
           inherit nixpkgs dependencyOverlays extra_pkg_config;
