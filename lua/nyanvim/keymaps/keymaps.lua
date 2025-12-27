@@ -95,8 +95,3 @@ map('v', '>', '>gv', { desc = 'Indent right' })
 -- Macros
 map('n', 'Q', '@qj', { desc = 'Run q macro' })
 map('x', 'Q', ':norm @q<CR>', { desc = 'Run q macro' })
-
--- insert mode
-map('i', 'kj', '<Esc>', { noremap = true, silent = true })
-map('i', 'fj', '<Esc>', { noremap = true, silent = true })
-map('i', 'jf', '<Esc>', { noremap = true, silent = true })

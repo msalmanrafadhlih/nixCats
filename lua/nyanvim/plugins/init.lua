@@ -5,10 +5,22 @@ require('lze').load {
       require('better_escape').setup {
         default_mappings = false,
         mappings = {
-          c = { j = { k = '<Esc>' } },
-          i = { j = { k = '<Esc>' } },
-          s = { j = { k = '<Esc>' } },
-          v = { j = { k = '<Esc>' } },
+          c = {
+            f = { j = '<Esc>' },
+            j = { f = '<Esc>' },
+          },
+          i = {
+            f = { j = '<Esc>' },
+            j = { f = '<Esc>' },
+          },
+          s = {
+            j = { f = '<Esc>' },
+            f = { j = '<Esc>' },
+          },
+          v = {
+            f = { j = '<Esc>' },
+            j = { f = '<Esc>' },
+          },
         },
       }
     end,
